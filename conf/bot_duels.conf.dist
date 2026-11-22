@@ -1,0 +1,94 @@
+[worldserver]
+
+################################################################################
+# mod-tofu-bot-duels (wow-tofuworld-bot-duels)
+#
+# Random bots challenge each other to duels near real players, and now and then challenge a real player. Bots accept and fight duels with mod-playerbots' own "duel" strategy; this module only sends the challenge.
+# Only random bots that are not in a group take part. Nothing runs where no real player is. Open world only (no dungeons, raids, battlegrounds, or arenas), only where the area allows duels, and never in Playerbots.PvpProhibitedZoneIds or AreaIds.
+################################################################################
+
+#
+#    BotDuels.Enable
+#        Description: Turn the module on.
+#        Default:     0 - (Disabled)
+#                     1 - (Enabled)
+
+BotDuels.Enable = 0
+
+#
+#    BotDuels.IntervalSeconds
+#        Description: How often the bots around each real player are checked. At most one new duel starts per check.
+#        Default:     10
+
+BotDuels.IntervalSeconds = 10
+
+#
+#    BotDuels.Radius
+#        Description: Yards around a real player in which bots are considered.
+#        Default:     60
+
+BotDuels.Radius = 60
+
+#
+#    BotDuels.PartnerRadius
+#        Description: Yards between a challenger and the bot or player it challenges. Capped at the duel spell's range minus 1 (the startup log line shows both).
+#        Default:     10
+
+BotDuels.PartnerRadius = 10
+
+#
+#    BotDuels.MinLevel
+#        Description: Lowest bot level that duels.
+#        Default:     10
+
+BotDuels.MinLevel = 10
+
+#
+#    BotDuels.MaxLevelDifference
+#        Description: Largest level difference between the two sides of a duel.
+#        Default:     3
+
+BotDuels.MaxLevelDifference = 3
+
+#
+#    BotDuels.MinHealthPct
+#        Description: Both sides must have at least this much health (percent).
+#        Default:     90
+
+BotDuels.MinHealthPct = 90
+
+#
+#    BotDuels.BotCooldownSeconds
+#        Description: Seconds after a challenge before the same bot can duel again.
+#        Default:     120
+
+BotDuels.BotCooldownSeconds = 120
+
+#
+#    BotDuels.MaxActivePerPlayer
+#        Description: No new bot duel starts while this many bots within Radius of the player are already dueling.
+#        Default:     2
+
+BotDuels.MaxActivePerPlayer = 2
+
+#
+#    BotDuels.ChallengePlayers.Chance
+#        Description: Percent chance, per check, that a nearby idle bot challenges the real player (only when the player is idle, not AFK, not in GM mode, and a bot within PartnerRadius and MaxLevelDifference is available). 0 turns it off.
+#        Default:     0 - (Disabled)
+
+BotDuels.ChallengePlayers.Chance = 0
+
+#
+#    BotDuels.ChallengePlayers.CooldownSeconds
+#        Description: Seconds after a bot challenges a player (accepted or not) before any bot may challenge that player again.
+#        Default:     1800
+
+BotDuels.ChallengePlayers.CooldownSeconds = 1800
+
+#
+#    BotDuels.Log
+#        Description: Write a line to the worldserver log for every challenge sent.
+#        Default:     0 - (Disabled)
+#                     1 - (Enabled)
+
+BotDuels.Log = 0
